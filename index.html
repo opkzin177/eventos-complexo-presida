@@ -2,22 +2,174 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eventos Complexo Presida</title>
-<meta http-equiv="refresh" content="0;url=https://eventoscomplexopresida.netlify.app/">
-<link rel="canonical" href="https://eventoscomplexopresida.netlify.app/">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0b">
+<meta name="robots" content="noindex,nofollow">
+<title>Desafio Junin Imports · 31 de outubro · Complexo Presida</title>
+<meta name="description" content="Desafio Junin Imports — 31 de outubro no Complexo Presida. Inscrição a partir de R$ 200.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://copa-presida-default-rtdb.firebaseio.com https://*.firebaseio.com https://eventoscomplexopresida.netlify.app https://*.netlify.app https://www.asaas.com https://api.asaas.com; frame-src https://www.asaas.com https://*.asaas.com; base-uri 'self'; form-action 'self' https://www.asaas.com; frame-ancestors 'none'">
 <style>
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-font-family:system-ui,sans-serif;background:#0a0a0b;color:#f4efe6;text-align:center;padding:24px}
-a{color:#e3c56b}
+:root{--bg:#0a0a0b;--bg2:#141416;--line:#2a2a2e;--cream:#f4efe6;--muted:#9a958c;--gold:#c9a227;--gold2:#e3c56b;--blue:#1e5eff;--blue2:#4d7cff;--ok:#3dd68c;--err:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--cream);line-height:1.45}
+a{color:var(--gold2);text-decoration:none}img{max-width:100%;display:block}
+.wrap{width:min(980px,100%);margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:20;background:rgba(10,10,11,.92);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.logo{font-weight:800;font-size:15px;cursor:pointer;user-select:none;touch-action:manipulation}
+.logo span{color:var(--blue2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#121214;color:var(--cream);font:inherit;font-weight:600;font-size:13px;cursor:pointer}
+.btn-solid{background:linear-gradient(135deg,var(--blue),#0a3fcc);border-color:transparent;color:#fff}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#a8861a);border-color:transparent;color:#0a0a0b}
+.btn-block{width:100%}
+.hero{padding:20px 0 8px}.hero-poster{border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.sec{padding:28px 0}.sec-title{margin:0 0 6px;font-size:26px}.sec-sub{margin:0 0 18px;color:var(--muted);font-size:14px}
+.grid-3{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:linear-gradient(180deg,#161618,#121214);border:1px solid var(--line);border-radius:16px;padding:16px}
+.card-cat{cursor:pointer}.card-cat:hover{border-color:var(--blue2)}.card-cat.active{border-color:var(--blue2);box-shadow:0 0 0 1px var(--blue2)}
+.card h3{margin:0 0 6px;font-size:16px}.card .prize{font-size:22px;font-weight:800;color:var(--ok);margin:8px 0 4px}.note{color:var(--muted);font-size:13px}
+.auth-tabs{display:flex;gap:8px;margin:0 0 12px}.auth-tabs .btn.on{border-color:var(--gold);color:var(--gold2)}
+label{display:block;margin:0 0 12px;font-size:13px;color:var(--muted)}
+input,select{width:100%;height:44px;margin-top:6px;border-radius:12px;border:1px solid var(--line);background:#0c0c0e;color:var(--cream);padding:0 12px;font:inherit}
+.pay-tabs{display:flex;gap:8px;margin:10px 0}.pay-tab{flex:1;height:42px;border-radius:12px;border:1px solid var(--line);background:#0c0c0e;color:var(--cream);font:inherit;cursor:pointer}.pay-tab.active{border-color:var(--gold);color:var(--gold2)}
+.pay-sum{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px;font-weight:700}
+.msg{margin:10px 0;font-size:13px}.msg.err{color:var(--err)}.msg.ok{color:var(--ok)}
+.ticket{display:none;margin-top:14px}.ticket.show{display:block}
+.auth-screen{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.75);align-items:center;justify-content:center;padding:20px}
+.auth-screen.open{display:flex}.auth-box{width:min(380px,100%);background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:20px}
+.admin-screen{display:none;position:fixed;inset:0;background:#0a0a0b;z-index:50;overflow:auto;padding:20px}
+.admin-screen.open{display:block}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:12px 0}
+.kpi{background:#0c0c0e;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12px;color:var(--muted)}.kpi b{display:block;margin-top:4px;font-size:18px;color:var(--cream)}
+.admin-tools{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.admin-row{border:1px solid var(--line);border-radius:12px;padding:12px;margin:8px 0;background:#0c0c0e}
+.badge-pago{color:var(--ok);font-weight:700;font-size:12px}.badge-wait{color:var(--gold2);font-weight:700;font-size:12px}
+footer{padding:24px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
 </style>
 </head>
 <body>
-<div>
-  <h1>Eventos Complexo Presida</h1>
-  <p>Abrindo o site…</p>
-  <p><a href="https://eventoscomplexopresida.netlify.app/">Clique aqui se não redirecionar</a></p>
+<header id="topo">
+  <div class="wrap nav">
+    <a class="logo" href="#topo" id="logo">DESAFIO <span>JUNIN</span></a>
+    <div class="nav-links">
+      <a class="btn" href="#categorias">Categorias</a>
+      <a class="btn btn-solid" href="#inscricao">Inscrição</a>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-poster"><img alt="Desafio Junin Imports" width="1280" height="720" src="https://eventoscomplexopresida.netlify.app/img/hero-desafio.webp"></div>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#inscricao">Fazer inscrição</a>
+        <a class="btn" href="#categorias">Ver categorias</a>
+      </div>
+      <p class="note">31 de outubro · Complexo Presida · PIX R$ 200 · Cartão R$ 235 à vista</p>
+    </div>
+  </section>
+  <section class="sec" id="categorias">
+    <div class="wrap">
+      <h2 class="sec-title">Categorias</h2>
+      <p class="sec-sub">Toque na categoria para se inscrever</p>
+      <div class="grid-3">
+        <div class="card card-cat active" data-cat="A com B" tabindex="0"><h3>A com B</h3><div class="prize">R$ 5.000</div><p class="note">Premiação</p><div class="cta">Inscrever →</div></div>
+        <div class="card card-cat" data-cat="Iniciante com C" tabindex="0"><h3>Iniciante com C</h3><div class="prize">R$ 3.000</div><p class="note">Premiação</p><div class="cta">Inscrever →</div></div>
+        <div class="card card-cat" data-cat="Aprendiz" tabindex="0"><h3>Aprendiz</h3><div class="prize">R$ 2.000</div><p class="note">Premiação</p><div class="cta">Inscrever →</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec" id="inscricao">
+    <div class="wrap" style="max-width:560px">
+      <h2 class="sec-title">Inscrição</h2>
+      <p class="sec-sub">PIX <strong style="color:var(--gold2)">R$ 200</strong> · Cartão à vista <strong style="color:var(--gold2)">R$ 235</strong></p>
+      <div id="authBox"></div>
+      <div class="card" id="authForms">
+        <div class="auth-tabs">
+          <button type="button" class="btn on" id="tabLogin">Entrar</button>
+          <button type="button" class="btn" id="tabReg">Criar conta</button>
+        </div>
+        <div id="modoLogin">
+          <label>Usuário<input id="logUser" autocomplete="username"></label>
+          <label>Senha<input id="logPass" type="password" autocomplete="current-password"></label>
+          <button type="button" class="btn btn-solid btn-block" id="btnLogin">Entrar</button>
+        </div>
+        <div id="modoRegistro" style="display:none">
+          <label>Usuário<input id="regUser" autocomplete="username"></label>
+          <label>Senha<input id="regPass" type="password" autocomplete="new-password"></label>
+          <label>Confirmar senha<input id="regPass2" type="password" autocomplete="new-password"></label>
+          <button type="button" class="btn btn-solid btn-block" id="btnRegister">Criar conta</button>
+        </div>
+        <p class="msg err" id="authErr"></p>
+      </div>
+      <div id="lockInscricao" class="card"><p class="note">Faça login ou crie uma conta para liberar a ficha de inscrição.</p></div>
+      <div id="fichaInscricao" style="display:none">
+        <div class="card">
+          <label>Nome da dupla<input id="nomeDupla" placeholder="Ex.: Krysttian / Kauan"></label>
+          <label>Nome do atleta<input id="nome" placeholder="Nome completo"></label>
+          <label>Parceiro<input id="pNome" placeholder="Nome do parceiro"></label>
+          <label>CPF<input id="cpf" inputmode="numeric" placeholder="000.000.000-00"></label>
+          <label>WhatsApp<input id="whats" inputmode="tel" placeholder="(61) 99999-9999"></label>
+          <label>E-mail (opcional)<input id="email" type="email"></label>
+          <label>Instagram (opcional)<input id="insta"></label>
+          <div class="pay-sum"><span id="payCat">A com B</span><strong>R$ 200,00</strong></div>
+          <div class="pay-tabs">
+            <button type="button" class="pay-tab active" data-modo="pix">PIX · R$ 200</button>
+            <button type="button" class="pay-tab" data-modo="cartao">Cartão · R$ 235</button>
+          </div>
+          <p class="note" id="payHint">PIX R$ 200,00.</p>
+          <button class="btn btn-gold btn-block" type="button" id="btnPagar">Confirmar inscrição · R$ 200,00</button>
+          <p class="msg" id="formMsg"></p>
+          <div class="ticket card" id="ticket"><p class="note">Ingresso</p><strong id="ticketCode">—</strong></div>
+        </div>
+      </div>
+      <div class="card" id="perfilBox" style="display:none;margin-top:14px">
+        <h3 style="margin:0 0 8px">Meus ingressos</h3>
+        <div id="meusIngressos"></div>
+        <button type="button" class="btn" style="margin-top:8px">Atualizar</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Complexo Presida · Eventos · Desafio Junin Imports</div></footer>
+<div class="auth-screen" id="auth">
+  <div class="auth-box">
+    <h3 style="margin:0 0 12px">Área restrita</h3>
+    <label>Usuário<input id="adminUser"></label>
+    <label>Senha<input id="adminPass" type="password"></label>
+    <p class="msg err" id="adminErr"></p>
+    <button type="button" class="btn btn-solid btn-block" id="btnAdminEntrar">Entrar</button>
+    <button type="button" class="btn btn-block" id="btnAuthFechar" style="margin-top:8px">Fechar</button>
+  </div>
 </div>
-<script>location.replace('https://eventoscomplexopresida.netlify.app/');</script>
+<div class="admin-screen" id="admin">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      <h2 style="margin:0">Área restrita</h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" class="btn" id="btnAdminListar">Atualizar</button>
+        <button type="button" class="btn" id="btnAdminSair">Sair</button>
+        <button type="button" class="btn" id="btnAdminFechar">Fechar</button>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi">Duplas<b id="kpiTotal">0</b></div>
+      <div class="kpi">Pagas<b id="kpiPagas">0</b></div>
+      <div class="kpi">Aguardando<b id="kpiWait">0</b></div>
+      <div class="kpi">Total pago<b id="kpiPago">R$ 0</b></div>
+      <div class="kpi">Gerado<b id="kpiGerado">R$ 0</b></div>
+    </div>
+    <div class="admin-tools">
+      <input type="search" id="buscaDupla" placeholder="Pesquisar dupla…" style="flex:1;min-width:160px;height:40px;border-radius:10px;border:1px solid var(--line);background:#0c0c0e;color:var(--cream);padding:0 12px">
+      <select id="filtroStatus" style="height:40px;border-radius:10px;border:1px solid var(--line);background:#0c0c0e;color:var(--cream)">
+        <option value="todos">Todos</option>
+        <option value="pago">Pagas</option>
+        <option value="aguardando">Aguardando</option>
+      </select>
+      <button type="button" class="btn" id="btnBuscar">Buscar</button>
+    </div>
+    <div id="lista"></div>
+  </div>
+</div>
+<script src="app.js"></script>
 </body>
 </html>
